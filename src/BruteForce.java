@@ -1,8 +1,9 @@
-public class BruteForce {
+public class BruteForce extends Cipher {
 
-    private BruteForce() {
-    }
     private static final BruteForce bruteForce = new BruteForce();
+    private BruteForce() {
+        super();
+    }
     public static BruteForce getBruteForce() {
         return bruteForce;
     }
@@ -12,14 +13,10 @@ public class BruteForce {
             " mi ", " a ", " y ", " o ", " mas ", " de ", " para ", " por "
     };
 
-    private final Cipher cipher = Cipher.getCipher();
-    private final String alphabet = cipher.getAlphabetString();
-
-
     public String decryptByBruteForce(String encryptedText) {
         String decryptedTest;
-        for(int i = 0; i < alphabet.length(); i++) {
-            decryptedTest = cipher.decrypt(encryptedText,i);
+        for(int i = 0; i < alphabetString.length(); i++) {
+            decryptedTest = decrypt(encryptedText,i);
             int value = 0;
             for (String x : connectors) {
                 if(decryptedTest.contains(x)) {

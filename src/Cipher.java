@@ -3,16 +3,13 @@ import java.nio.charset.StandardCharsets;
 public class Cipher {
 
     private static final Cipher instance = new Cipher();
-    private Cipher() {
+    protected Cipher() {
     }
     public static Cipher getCipher() {
         return instance;
     }
 
-    private String alphabetString = " GAxzHVÍprhMwjBmEqUyoJÑLZFdOKNQntTIYsWcDublñCvgSkXae";
-    public String getAlphabetString() {
-        return alphabetString;
-    }
+    protected String alphabetString = " GAxzHVÍprhMwjBmEqUyoJÑLZFdOKNQntTIYsWcDublñCvgSkXae";
 
     public String encrypt(String text, int shift) {
 
